@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Patterns & Loops</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .box { background: #f4f4f4; padding: 15px; margin-bottom: 15px; border-left: 4px solid #007BFF; }
+        pre { font-family: monospace; font-size: 16px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <h2>Number Patterns & Loops Assignments</h2>
+
+    <div class="box">
+        <h3>1. Numbers from 1 to 20</h3>
+        <pre id="output1"></pre>
+    </div>
+
+    <div class="box">
+        <h3>2. Even numbers from 2 to 20</h3>
+        <pre id="output2"></pre>
+    </div>
+
+    <div class="box">
+        <h3>3. Odd numbers from 1 to 19</h3>
+        <pre id="output3"></pre>
+    </div>
+
+    <div class="box">
+        <h3>4. Multiplication Table</h3>
+        <pre id="output4">Run prompt to generate table...</pre>
+    </div>
+
+    <div class="box">
+        <h3>5. 5 by 5 Star (*) Pattern (Nested Loops)</h3>
+        <pre id="output5"></pre>
+    </div>
+
+    <script>
+        // 1. Numbers from 1 to 20
+        var result1 = "";
+        for (var i = 1; i <= 20; i++) {
+            result1 += i + " ";
+        }
+        document.getElementById("output1").textContent = result1;
+
+        // 2. Even numbers from 2 to 20
+        var result2 = "";
+        for (var i = 2; i <= 20; i += 2) {
+            result2 += i + " ";
+        }
+        document.getElementById("output2").textContent = result2;
+
+        // 3. Odd numbers from 1 to 19
+        var result3 = "";
+        for (var i = 1; i <= 19; i += 2) {
+            result3 += i + " ";
+        }
+        document.getElementById("output3").textContent = result3;
+
+        // 4. Multiplication table of any number entered by the user
+        var userNum = Number(prompt("Enter a number for the multiplication table:"));
+        var tableResult = "";
+        if (!isNaN(userNum) && userNum !== 0) {
+            for (var i = 1; i <= 10; i++) {
+                tableResult += userNum + " x " + i + " = " + (userNum * i) + "\n";
+            }
+        } else {
+            tableResult = "Invalid number entered.";
+        }
+        document.getElementById("output4").textContent = tableResult;
+
+        // 5. A 5 x 5 star (*) pattern using nested loops
+        var starPattern = "";
+        for (var row = 1; row <= 5; row++) {       // Outer loop controls rows
+            for (var col = 1; col <= 5; col++) {   // Inner loop controls columns (stars per row)
+                starPattern += "* ";
+            }
+            starPattern += "\n";                   // Move to the next line after each row
+        }
+        document.getElementById("output5").textContent = starPattern;
+    </script>
+
+</body>
+</html>
